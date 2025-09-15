@@ -14,6 +14,9 @@ public class Photo {
 
     private String fileName;
     private String creationDate;
+    private String filePath;
+    private String tags;
+
 
     // JPA requires a no-argument constructor
     public Photo() {
@@ -37,6 +40,15 @@ public class Photo {
         return creationDate;
     }
 
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public String getTags() {
+        return tags;
+    }
+
+
     // --- Setters ---
     public void setFileName(String fileName) {
         this.fileName = fileName;
@@ -44,5 +56,13 @@ public class Photo {
 
     public void setCreationDate(String creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
     }
 }
