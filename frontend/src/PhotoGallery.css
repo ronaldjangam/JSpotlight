@@ -1,43 +1,44 @@
 .gallery-section {
-  padding: 20px;
+  padding: 32px 40px;
+  max-width: 1800px;
 }
 
 .smart-groups {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .smart-groups-header {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .smart-groups-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: #e5e5e7;
   margin: 0;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.3px;
 }
 
 .group-tags {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .group-tag {
-  padding: 6px 14px;
-  border-radius: 6px;
+  padding: 8px 18px;
+  border-radius: 8px;
   border: 1px solid #3a3a3c;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   background: #2c2c2e;
   color: #e5e5e7;
 }
@@ -84,14 +85,14 @@
 }
 
 .ai-tags-section {
-  margin-top: 20px;
+  margin-top: 32px;
 }
 
 .ai-tags-title {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   color: #8e8e93;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -99,16 +100,16 @@
 .ai-tags-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
+  gap: 10px;
+  margin-bottom: 32px;
 }
 
 .ai-tag {
-  padding: 4px 10px;
+  padding: 6px 12px;
   background: #2c2c2e;
   border: 1px solid #3a3a3c;
   border-radius: 6px;
-  font-size: 12px;
+  font-size: 13px;
   color: #e5e5e7;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -121,15 +122,15 @@
 }
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 4px;
-  margin-top: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+  margin-top: 24px;
 }
 
 .photo-card {
   position: relative;
   aspect-ratio: 1;
-  border-radius: 0;
+  border-radius: 4px;
   overflow: hidden;
   background: #2c2c2e;
   cursor: pointer;
@@ -250,19 +251,19 @@
 
 .gallery-empty {
   text-align: center;
-  padding: 60px 20px;
+  padding: 100px 20px;
   color: #8e8e93;
 }
 
 .gallery-empty h2 {
-  font-size: 20px;
+  font-size: 22px;
   color: #e5e5e7;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   font-weight: 600;
 }
 
 .gallery-empty p {
-  font-size: 14px;
+  font-size: 15px;
   color: #8e8e93;
 }
 
