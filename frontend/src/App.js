@@ -37,7 +37,7 @@ function App() {
       {/* Sidebar */}
       <aside className="sidebar">
         <div className="sidebar-header">
-          <h1 className="app-title">Clarity Photos</h1>
+          <h1 className="app-title">JSpotlight</h1>
           <div className="user-profile">
             <div className="user-avatar">U</div>
           </div>
