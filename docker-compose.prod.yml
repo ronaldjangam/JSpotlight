@@ -1,0 +1,66 @@
+version: "3.9"
+
+services:
+  backend:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: jspotlight-backend-prod
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - uploads-data:/app/uploads
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - AI_SERVICE_URL=http://ai-service:5000/predict
+      - JWT_SECRET=${JWT_SECRET:-please-change-this-in-production}
+    depends_on:
+      - ai-service
+    networks:
+      - jspotlight-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  ai-service:
+    build: 
+      context: ./ai-service
+      dockerfile: Dockerfile
+    container_name: jspotlight-ai-prod
+    restart: always
+    ports:
+      - "5000:5000"
+    networks:
+      - jspotlight-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: jspotlight-frontend-prod
+    restart: always
+    ports:
+      - "80:3000"
+    environment:
+      - NODE_ENV=production
+      - REACT_APP_API_URL=http://localhost:8080
+    depends_on:
+      - backend
+    networks:
+      - jspotlight-network
+
+networks:
+  jspotlight-network:
+    driver: bridge
+
+volumes:
+  uploads-data:
+    driver: local

@@ -1,68 +1,32 @@
 package com.project.JSpotlight;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Photo {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String fileName;
-    private String creationDate;
+    private Date creationDate;
     private String filePath;
-    private String tags;
 
+    @ElementCollection
+    private List<String> tags;
 
-    // JPA requires a no-argument constructor
-    public Photo() {
-    }
+    public Photo() { }
 
-    public Photo(String fileName, String creationDate) {
-        this.fileName = fileName;
-        this.creationDate = creationDate;
-    }
+    public Long getId() { return id; }
+    public String getFileName() { return fileName; }
+    public Date getCreationDate() { return creationDate; }
+    public String getFilePath() { return filePath; }
+    public List<String> getTags() { return tags; }
 
-    // --- Getters ---
-    public Long getId() {
-        return id;
-    }
-
-    public String getFileName() {
-        return fileName;
-    }
-
-    public String getCreationDate() {
-        return creationDate;
-    }
-
-    public String getFilePath() {
-        return filePath;
-    }
-
-    public String getTags() {
-        return tags;
-    }
-
-
-    // --- Setters ---
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
-
-    public void setCreationDate(String creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
-    }
-
-    public void setTags(String tags) {
-        this.tags = tags;
-    }
+    public void setFileName(String fileName) { this.fileName = fileName; }
+    public void setCreationDate(Date creationDate) { this.creationDate = creationDate; }
+    public void setFilePath(String filePath) { this.filePath = filePath; }
+    public void setTags(List<String> tags) { this.tags = tags; }
 }
