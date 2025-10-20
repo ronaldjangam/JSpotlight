@@ -31,3 +31,13 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Python virtual environment
+ai-service/venv/
+
+# Node modules
+frontend/node_modules/
+
+# Uploaded files (user content)
+uploads/*
+!uploads/.gitkeep
